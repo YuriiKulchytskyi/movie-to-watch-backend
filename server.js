@@ -22,12 +22,7 @@ app.use((err, req, res, next) => {
 
 mongoose
   .connect(DB_HOST)
-  // .then(() => {
-  //   console.log("DB is connected");
-  //   app.listen(3000, () => {
-  //     console.log("Server is running on post 3000!");
-  //   });
-  // })
+
   .catch((err) => {
     console.error(err.message);
     process.exit(1);
