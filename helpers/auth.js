@@ -1,6 +1,6 @@
 const { tokens } = require("../config/app").jwt;
 const Token = require("../models/token");
-const { nanoid } = require("nanoid");
+const { randomUUID } = require("crypto");
 
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv").config();
@@ -22,7 +22,7 @@ const generateAccessToken = (userID) => {
 
 const generateRefreshToken = () => {
   const payload = {
-    id: nanoid(),
+    id: randomUUID(),
     type: tokens.refresh.type,
   };
 
